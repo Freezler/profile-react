@@ -4,24 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export function SocialIcons() {
   return (
     <div>
-      <ul className="gap-4 w-[100%] socialIcons">
+      <ul className="gap-4 align-bottom socialIcons">
         <li>
-          <a href="#" aria-label="Codepen">
+          <a href="https://codepen.io/freezler" aria-label="Codepen">
             <FontAwesomeIcon icon={faCodepen} className="icon" />
           </a>
         </li>
         <li>
-          <a href="#" aria-label="Twitter">
+          <a href="https://x.com/randy64757" aria-label="Twitter">
             <FontAwesomeIcon icon={faXTwitter} className="icon" />
           </a>
         </li>
         <li>
-          <a href="#" aria-label="LinkedIn">
+          <a href="https://nl.linkedin.com/in/randy-de-vries-858291278" aria-label="LinkedIn">
             <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
           </a>
         </li>
         <li>
-          <a href="#" aria-label="Github">
+          <a href="https://github.com/Freezler" aria-label="Github">
             <FontAwesomeIcon icon={faGithub} className="icon" />
           </a>
         </li>
