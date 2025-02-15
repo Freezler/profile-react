@@ -1,3 +1,4 @@
+import Codepen from './components/Codepen'
 import Header from './components/Header'
 import { SocialIcons } from './components/Social'
 import TopicCards from './components/TopicCards'
@@ -16,7 +17,12 @@ function App() {
         <section>
           <TopicCards />
         </section>
+
+        <section>
+          <Codepen />
+        </section>
       </main>
+
       <footer className="right-0 bottom-0 left-0 z-100 place-items-center w-[100svw]">
         <SocialIcons />
       </footer>
