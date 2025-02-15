@@ -2,7 +2,6 @@ import Header from './components/Header'
 import { SocialIcons } from './components/Social'
 import TopicCards from './components/TopicCards'
 import ParticlesComponent from './components/ui/particles'
-import './Index.css'
 
 function App() {
   return (
