@@ -1,5 +1,6 @@
 import { Sling as Hamburger } from 'hamburger-react'
 import { useEffect, useState } from 'react'
+import { SocialIcons } from './Social'
 
 function Header() {
   const [isOpen, setOpen] = useState(false)
@@ -36,17 +37,17 @@ function Header() {
       </div>
       <ul
         id="mobileMenu"
-        className={`relative antialiased pt-40 top-0 right-0 text-lg  z-[200] block md:hidden  bg-[rgba(31,17,45,0.59)]  p-8 h-[100svh] text-zinc-100 align-center text-center [&>li>a]:transition-all [&>li>a]:p-2 [&>li>a]:w-full [&>li>a]:duration-[450ms] [&li>a]:ease-in-out `}
+        className={`relative antialiased py-32 top-0 right-0 place-items-center [&>li>a]:text-[2rem]  justify-around text-lg  z-[200] block md:hidden  p-8 h-[100svh] text-zinc-100 `}
         data-open={isOpen ? 'true' : 'false'}
       >
-        <div className="absolute top-5 left-0flex justify-start space-x-0 [&>a]:text-[2rem] mr-auto text-zinc-100">
-          <a href="#" className="underline-offset-16">RLDV</a>
-        </div>
+        <header className="absolute top-4 right-2 left-0 flex space-x-0 [&>a]:text-[2.6rem] mr-auto text-zinc-100">
+          <a href="#" className="mx-8">menu</a>
+        </header>
         <img src="https://i.pravatar.cc/250?img=65" alt="avatar" className="mx-auto my-12 rounded-full w-[100px] h-[100px]" />
         <li className="z-[50] py-2 [&>a]:hover:text-violet-200">
           <a href="#">Home</a>
         </li>
-        <li className="py-2 [&>a]:hover:text-violet-200   rounded-full">
+        <li className="py-2 [&>a]:hover:text-violet-200">
           <a href="#">About Me</a>
         </li>
         <li className="py-2 [&>a]:hover:text-violet-200 ">
@@ -54,6 +55,9 @@ function Header() {
         </li>
         <li className="py-2 [&>a]:hover:text-violet-200 ">
           <a href="#">Links</a>
+        </li>
+        <li className="right-0 bottom-24 left-0 absolute place-items-center">
+          <SocialIcons />
         </li>
       </ul>
     </nav>

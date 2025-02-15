@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import { SocialIcons } from './components/Social'
 import TopicCards from './components/TopicCards'
 import ParticlesComponent from './components/ui/particles'
 import './Index.css'
@@ -9,7 +10,7 @@ function App() {
       <header className="w-[100svw]">
         <Header />
       </header>
-      <main className="pb-[200px]">
+      <main className="pb-[124px]">
         <section id="particles" className="mb-24">
           <ParticlesComponent />
         </section>
@@ -17,6 +18,9 @@ function App() {
           <TopicCards />
         </section>
       </main>
+      <footer className="right-0 bottom-0 left-0 z-100 place-items-center w-[100svw]">
+        <SocialIcons />
+      </footer>
     </div>
 
   )

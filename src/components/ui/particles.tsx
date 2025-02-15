@@ -45,11 +45,11 @@ export function ParticlesComponent() {
           value: '#0e0e0e',
         },
       },
-      fpsLimit: 160,
+      fpsLimit: 200,
       interactivity: {
         events: {
           onClick: {
-            enable: false,
+            enable: true,
             mode: 'repulse',
           },
           onHover: {
@@ -60,7 +60,7 @@ export function ParticlesComponent() {
         },
         modes: {
           push: {
-            quantity: 10,
+            quantity: 100,
             size: 1,
           },
           repulse: {
@@ -73,7 +73,7 @@ export function ParticlesComponent() {
             duration: 100,
             enable: true,
             maxSpeed: 50,
-            speed: 1,
+            speed: 1.5,
           },
         },
       },
@@ -86,7 +86,7 @@ export function ParticlesComponent() {
           distance: 100,
           enable: true,
           opacity: 1,
-          width: 0.5,
+          width: 1,
 
         },
         move: {
