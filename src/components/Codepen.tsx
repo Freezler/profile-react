@@ -1,150 +1,92 @@
-import React, { useEffect, useRef } from 'react'
+import autoAnimate from '@formkit/auto-animate'
+import { useEffect, useRef, useState } from 'react'
+
+const generateRandomNumber = (limit: number) => Math.floor(Math.random() * limit)
+
+interface GalleryItem {
+  id: number
+  height: number
+  width: number
+  imageUrl: string
+}
+
+function GalleryItemComponent({ item, onClick }: { item: GalleryItem, onClick: () => void }) {
+  return (
+    <div className={`item h${item.height} v${item.width}`} onClick={onClick}>
+      <img src={item.imageUrl} alt="" loading="lazy" />
+      <div className="item__overlay">
+        <button>View →</button>
+      </div>
+    </div>
+  )
+}
 
 export function Codepen() {
-  const galleryRef = useRef<HTMLDivElement | null>(null)
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([])
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const overlayImageRef = useRef<HTMLImageElement | null>(null)
-  const overlayCloseRef = useRef<HTMLButtonElement | null>(null)
+  const galleryRef = useRef<HTMLDivElement | null>(null)
 
-  const showOverlay = () => {
+  const toggleOverlayVisibility = () => {
     const overlay = overlayRef.current
     if (overlay) {
-      overlay.classList.add('open')
-      overlay.classList.remove('closing')
+      overlay.classList.toggle('open')
     }
-  }
-
-  const hideOverlay = () => {
-    const overlay = overlayRef.current
-    if (overlay) {
-      overlay.classList.add('closing')
-      overlay.classList.remove('open')
-      overlay.addEventListener(
-        'animationend',
-        function onAnimationEnd() {
-          overlay.classList.remove('closing')
-          overlay.removeEventListener('animationend', onAnimationEnd)
-        },
-        { once: true },
-      )
-    }
-  }
-
-  const closeOverlay = () => {
-    hideOverlay()
-  }
-
-  const showOrHideOverlay = () => {
-    const overlay = overlayRef.current
-    if (overlay?.classList.contains('open')) {
-      hideOverlay()
-    }
-    else {
-      showOverlay()
+    if (!overlay?.classList.contains('open')) {
+      overlay?.classList.remove('closing')
     }
   }
 
   useEffect(() => {
-    const gallery = galleryRef.current
-    const overlayImage = overlayImageRef.current
-    const overlayClose = overlayCloseRef.current
-
-    const generateRandomNumber = (limit: number) => Math.floor(Math.random() * limit)
-
-    const generateGridItemHTML = (value: number[], _index: number, _array: number[][]) => {
-      const [h, w] = value
-      const height = Array.from({ length: h }, () => 'h').join('')
-      const width = Array.from({ length: w }, () => 'v').join('')
-      const randomId = generateRandomNumber(255 + 1)
-      const randomUrl = `https://picsum.photos/id/${randomId}/1600/800`
-
-      return `
-        <div class="item h${height.length} v${width.length}">
-          <img src="${randomUrl}">
-          <div class="item__overlay">
-            <button>View →</button>
-          </div>
-        </div>
-      `
+    if (galleryRef.current) {
+      autoAnimate(galleryRef.current, {
+        duration: 950, // Animation duration in milliseconds
+        easing: 'ease-in-out', // CSS easing function
+      })
     }
 
-    const handleGridItemClick = (e: React.MouseEvent<HTMLDivElement>) => {
-      const src = (e.currentTarget.querySelector('img') as HTMLImageElement).src
-      if (overlayImage) {
-        overlayImage.src = src
-      }
-      showOrHideOverlay()
-    }
+    const digits = Array.from({ length: 20 }, () => [
+      generateRandomNumber(5),
+      generateRandomNumber(5),
+    ]).concat(Array.from({ length: 20 }, () => [1, 1]))
 
-    function generateHTML([h, v]: number[]) {
-      const randomId = generateRandomNumber(255 + 1)
-      const randomUrl = `https://picsum.photos/id/${randomId}/1600/800`
+    const items = digits.map(([height, width], index) => ({
+      id: index,
+      height,
+      width,
+      imageUrl: `https://picsum.photos/id/${generateRandomNumber(600)}/1200/800?random=${index}`,
+    }))
 
-      return `
-        <div class="item h${h} v${v}">
-          <img src="${randomUrl}" loading="lazy">
-          <div class="item__overlay">
-            <button>View →</button>
-          </div>
-        </div>
-      `
-    }
-
-    function randomNumber(limit: number) {
-      return Math.floor(Math.random() * limit) + 1
-    }
-
-    const digits = Array.from({ length: 120 }, () => [
-      randomNumber(5),
-      randomNumber(5),
-    ]).concat([
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-    ])
-
-    const html = digits.map(generateHTML).join('')
-    if (gallery) {
-      gallery.innerHTML = html
-    }
-    const gridHTML = digits.map(generateGridItemHTML).join('')
-    if (gallery) {
-      gallery.innerHTML = gridHTML
-      const gridItems = Array.from(gallery.children)
-      gridItems.forEach(item => item.addEventListener('click', (e) => {
-        handleGridItemClick(e as unknown as React.MouseEvent<HTMLDivElement>)
-      }))
-    }
-    overlayClose?.addEventListener('click', closeOverlay)
+    setGalleryItems(items)
   }, [])
 
+  const handleItemClick = (imageUrl: string) => {
+    if (overlayImageRef.current) {
+      overlayImageRef.current.src = imageUrl
+    }
+    toggleOverlayVisibility()
+  }
+
+  const shuffleGallery = () => {
+    setGalleryItems(items => [...items].sort(() => Math.random() - 0.5))
+  }
+
   return (
-    <div className="mt-0">
+    <div className="bg-[linear-gradient(var(--background2))] pt-16 min-h-screen font-[var(--font)] text-[clamp(0.8rem,2vw,1.2rem)] text-[var(--badass)]">
       <h1 className="title job">CSS GRID GALLERY</h1>
-      <div ref={galleryRef} className="gallery"></div>
+      <button onClick={shuffleGallery} className="text-[var(--bright-pink)] bottom-0 sticky flex justify-center items-center m-4 mx-auto my-8 px-6 border border-[var(--badass)] rounded-[7px] focus:outline-none">Shuffle Gallery</button>
+      <div ref={galleryRef} className="gallery">
+        {galleryItems.map(item => (
+          <GalleryItemComponent
+            key={item.id}
+            item={item}
+            onClick={() => handleItemClick(item.imageUrl)}
+          />
+        ))}
+      </div>
       <div ref={overlayRef} className="overlay">
         <img ref={overlayImageRef} alt="Overlay" />
-        <button ref={overlayCloseRef} className="m-4 px-6 close">Close</button>
+        <button className="m-4 px-6 close" onClick={toggleOverlayVisibility}>Close</button>
       </div>
     </div>
   )
