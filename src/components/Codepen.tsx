@@ -1,5 +1,6 @@
 import autoAnimate from '@formkit/auto-animate'
 import { useEffect, useRef, useState } from 'react'
+import { Button } from './ui/button'
 
 const generateRandomNumber = (limit: number) => Math.floor(Math.random() * limit)
 
@@ -72,9 +73,13 @@ export function Codepen() {
   }
 
   return (
-    <div className="bg-[linear-gradient(var(--background2))] pt-16 min-h-screen font-[var(--font)] text-[clamp(0.8rem,2vw,1.2rem)] text-[var(--badass)]">
-      <h1 className="title job">CSS GRID GALLERY</h1>
-      <button onClick={shuffleGallery} className="text-[var(--bright-pink)] bottom-0 sticky flex justify-center items-center m-4 mx-auto my-8 px-6 border border-[var(--badass)] rounded-[7px] focus:outline-none">Shuffle Gallery</button>
+    <div className="items-center bg-[linear-gradient(var(--background2))] py-16 pb-16 h-auto font-[var(--font)] text-[clamp(0.8rem,2vw,1.2rem)] text-[var(--badass)]">
+      <div className="place-items-center grid p-4 w-full">
+        <h1 className="text-center title job">CSS GRID GALLERY</h1>
+        <Button onClick={shuffleGallery} variant="outline" className="text-[--bright-pink] w-[clamp(200px,20vw,300px)] text-[clamp(0.6rem,2vw,1rem)]">
+          Learn more
+        </Button>
+      </div>
       <div ref={galleryRef} className="gallery">
         {galleryItems.map(item => (
           <GalleryItemComponent
@@ -84,10 +89,12 @@ export function Codepen() {
           />
         ))}
       </div>
+
       <div ref={overlayRef} className="overlay">
         <img ref={overlayImageRef} alt="Overlay" />
-        <button className="m-4 px-6 close" onClick={toggleOverlayVisibility}>Close</button>
+        <button className="bottom-0 absolute m-4 px-6 close" onClick={toggleOverlayVisibility}>Close</button>
       </div>
+
     </div>
   )
 }

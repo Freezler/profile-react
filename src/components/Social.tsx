@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function SocialIcons() {
   return (
-    <div className="z-[2200] justify-center items-center place-items-center grid">
+    <div className="z-[1500] relative">
       <ul className="gap-4 align-bottom socialIcons">
         <li>
           <a href="https://codepen.io/freezler" aria-label="Codepen">

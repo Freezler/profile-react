@@ -56,7 +56,7 @@ function Header() {
         <li className="py-2 [&>a]:hover:text-violet-200 ">
           <a href="#">Links</a>
         </li>
-        <li className="right-0 bottom-24 left-0 absolute place-items-center">
+        <li className="right-0 bottom-0 left-0 absolute place-items-center">
           <SocialIcons />
         </li>
       </ul>

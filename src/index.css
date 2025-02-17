@@ -41,12 +41,12 @@ p > small {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, 100px);
-  grid-auto-rows: 100px;
-  grid-auto-flow: dense;
+  grid-auto-rows: 64px;
+  grid-auto-flow: dense row;
   justify-content: center;
   grid-gap: 16px;
   place-content: center;
-  z-index: 1200;
+  z-index: 100;
 }
 
 @keyframes cardEntrance {
@@ -75,7 +75,7 @@ p > small {
   grid-row: 1 / -1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-position: center center;
   background-size: cover;
   background: transparent;
 }
@@ -95,13 +95,16 @@ p > small {
 }
 
 .item__overlay button {
+  position: relative;
+  place-self: center;
+
   background: none;
   border: 1px solid rgba(100%, 100%, 100%, 0.7);
   border-radius: 6px;
-  color: rgba(100%, 100%, 100%, 0.9);
+  color: var(--badass);
+  padding-inline: 6px;
   text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 6px 12px;
+  background: var(--bright-pink);
 }
 
 .item:hover .item__overlay {
@@ -111,6 +114,10 @@ p > small {
 .item:hover img {
   transition: all 4200ms ease-in-out;
   transform: scale(2);
+}
+
+.item {
+  transition: all 420ms ease-in-out;
 }
 
 .item.v2 {
@@ -132,6 +139,7 @@ p > small {
 .item.v4 {
   grid-row: span 2;
 }
+
 .item.v5 {
   grid-row: span 1;
 }
@@ -147,6 +155,7 @@ p > small {
 .item.h4 {
   grid-column: span 3;
 }
+
 .item.h5 {
   grid-row: span 2;
 }
@@ -189,7 +198,7 @@ p > small {
 }
 
 .overlay img {
-  width: min(90svw, 924px);
+  width: min(100svw, 924px);
   aspect-ratio: 16/9;
   background-size: cover;
   background-position: center center;

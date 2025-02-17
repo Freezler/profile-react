@@ -275,7 +275,7 @@ input.__focus {
 
 button:focus,
 button.__focus {
-  outline: 4px solid rgba(117, 170, 255, 0.5);
+  outline: 4px solid var(--bright-pink);
 }
 
 button:active,
