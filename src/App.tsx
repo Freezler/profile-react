@@ -10,11 +10,11 @@ function App() {
       <header className="w-[100svw]">
         <Header />
       </header>
-      <main className="gap-16 my-16">
-        <section id="particles" className="mb-24">
+      <main className="gap-16">
+        <section id="particles" className="">
           <ParticlesComponent />
         </section>
-        <section className="mb-32">
+        <section className="">
           <TopicCards />
         </section>
         <section>
@@ -22,7 +22,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="right-0 bottom-0 left-0 z-100 place-items-center w-[100svw] h-160px">
+      <footer className="right-0 bottom-0 left-0 z-100 place-items-center w-[100svw]">
         <SocialIcons />
       </footer>
     </div>
