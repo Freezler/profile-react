@@ -10,7 +10,7 @@ function Header() {
   }, [])
 
   return (
-    <nav className="top-0 right-0 left-0 z-[100] fixed flex justify-between items-start bg-[linear-gradient(var(--background2))] backdrop-blur-sm mb-4 p-6 px-8 py-[8px] w-100 antialiased select-none">
+    <nav className="top-0 right-0 left-0 z-[400] fixed flex justify-between items-start bg-[linear-gradient(var(--background2))] backdrop-blur-sm mb-4 p-6 px-8 py-[8px] w-100 antialiased select-none">
       <div className="flex justify-start space-x-4 [&>a]:text-[2rem] mr-auto text-zinc-100">
         <a href="#">RLDV</a>
       </div>
@@ -20,7 +20,7 @@ function Header() {
         <a href="#"> Web development </a>
         <a href="#">| Links</a>
       </div>
-      <div className="md:hidden z-[2000] flex place-self-center">
+      <div className="md:hidden z-[1000] flex place-self-center">
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}
@@ -37,7 +37,7 @@ function Header() {
       </div>
       <ul
         id="mobileMenu"
-        className={`relative antialiased py-32 top-0 right-0 place-items-center [&>li>a]:text-[2rem]  justify-around text-lg  z-[200] block md:hidden  p-8 h-[100svh] text-zinc-100 `}
+        className={`relative antialiased py-32 top-0 right-0 place-items-center [&>li>a]:text-[2rem]  justify-around text-lg  z-[300] block md:hidden  p-8 h-[100svh] text-zinc-100 `}
         data-open={isOpen ? 'true' : 'false'}
       >
         <header className="absolute top-4 right-2 left-0 flex space-x-0 [&>a]:text-[2.6rem] mr-auto text-zinc-100">

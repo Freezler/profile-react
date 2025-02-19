@@ -14,7 +14,8 @@ interface GalleryItem {
 function GalleryItemComponent({ item, onClick }: { item: GalleryItem, onClick: () => void }) {
   return (
     <div className={`item h${item.height} v${item.width}`} onClick={onClick}>
-      <img src={item.imageUrl} alt="" loading="lazy" />
+      <img src={item.imageUrl} alt="" loading="lazy" data-index={item.id} />
+      <span className="text-[--bright-pink] bottom-0 absolute bg-[--badass] px-3 py-1 rounded-tr-2xl index">{item.id + 1}</span>
       <div className="item__overlay">
         <button>View →</button>
       </div>
@@ -41,21 +42,20 @@ export function Codepen() {
   useEffect(() => {
     if (galleryRef.current) {
       autoAnimate(galleryRef.current, {
-        duration: 950, // Animation duration in milliseconds
+        duration: 600, // Animation duration in milliseconds
         easing: 'ease-in-out', // CSS easing function
       })
     }
 
-    const digits = Array.from({ length: 20 }, () => [
+    const digits = Array.from({ length: 32 }, () => [
       generateRandomNumber(5),
       generateRandomNumber(5),
-    ]).concat(Array.from({ length: 20 }, () => [1, 1]))
-
+    ]).concat(Array.from({ length: 12 }, () => [1, 1]))
     const items = digits.map(([height, width], index) => ({
       id: index,
       height,
       width,
-      imageUrl: `https://picsum.photos/id/${generateRandomNumber(600)}/1200/800?random=${index}`,
+      imageUrl: `https://picsum.photos/id/${generateRandomNumber(128)}/1200/800?random=${index}`,
     }))
 
     setGalleryItems(items)
@@ -69,15 +69,21 @@ export function Codepen() {
   }
 
   const shuffleGallery = () => {
-    setGalleryItems(items => [...items].sort(() => Math.random() - 0.5))
+    setGalleryItems((items) => {
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]]
+      }
+      return [...items]
+    })
   }
 
   return (
-    <div className="items-center bg-[linear-gradient(var(--background2))] py-16 pb-16 h-auto font-[var(--font)] text-[clamp(0.8rem,2vw,1.2rem)] text-[var(--badass)]">
-      <div className="place-items-center grid p-4 w-full">
-        <h1 className="text-center title job">CSS GRID GALLERY</h1>
-        <Button onClick={shuffleGallery} variant="outline" className="text-[--bright-pink] w-[clamp(200px,20vw,300px)] text-[clamp(0.6rem,2vw,1rem)]">
-          Learn more
+    <div className="items-center pt-8 font-[var(--font)] text-[clamp(0.8rem,2vw,1.2rem)] text-[var(--badass)]">
+      <div className="justify-center place-items-center grid w-full align-center">
+        <h1 className="text-[clamp(2rem,5vw,3rem)] text-center leading-[1] title">CSS GRID GALLERY</h1>
+        <Button onClick={shuffleGallery} variant="outline" className="text-[--bright-pink] bg-[var(--badass)] mb-16 w-[clamp(200px,20vw,300px)] text-[clamp(1.2rem,2vw,1.6rem)]">
+          Shuffle Gallery!
         </Button>
       </div>
       <div ref={galleryRef} className="gallery">

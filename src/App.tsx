@@ -6,7 +6,7 @@ import ParticlesComponent from './components/ui/particles'
 
 function App() {
   return (
-    <div className="min-h-[100svh]">
+    <div className="bg-[linear-gradient(in_oklch_decreasing_hue_45deg,var(--bright-pink),#00000f)] w-[100svw] min-h-[100svh]">
       <header className="w-[100svw]">
         <Header />
       </header>
