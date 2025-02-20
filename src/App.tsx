@@ -15,9 +15,9 @@ function App() {
         <section id="particles" className="top-0 left-0 relative">
           <ParticlesComponent />
           <div className="top-1/2 left-1/2 absolute items-center place-items-center grid -translate-x-1/2 -translate-y-1/2">
-            <h1 className="z-[1000] bg-[linear-gradient(var(--background3))] bg-clip-text font-[Inter] font-extrabold text-[clamp(2.4rem,6vw,6rem)] text-transparent uppercase text-nowrap tracking-thight">Randy de vries</h1>
+            <h1 className="bg-[linear-gradient(in_oklch_decreasing_hue_45deg,var(--bright-pink),rgb(46,147,236))] z-[1000] bg-clip-text font-[Inter] font-extrabold text-[clamp(2.4rem,6vw,6rem)] text-transparent uppercase text-nowrap tracking-thight">Randy de vries</h1>
 
-            <h1 className="text-[#f1eded]">javaScript developer</h1>
+            <h1 className="text-[--yellow] font-[Inter] font-extrabold text-[clamp(1rem,2vw,2rem)] uppercase text-nowrap tracking-thight [&>span]:text-[--bright-pink]">javaScript developer</h1>
           </div>
 
         </section>
