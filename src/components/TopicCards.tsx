@@ -66,9 +66,9 @@ const topicCardContent: TopicCardContent[] = [
 
 function TopicCards() {
   return (
-    <div className="place-items-center place-self-center gap-[48px] grid grid-cols-[90vw] md:grid-cols-2 lg:grid-cols-3 mx-[16px] my-[48px] h-full text-white ]">
+    <div className="place-items-center place-self-center gap-[48px] grid grid-cols-[90vw] md:grid-cols-2 lg:grid-cols-3 mx-[16px] h-full text-white ]">
       {topicCardContent.map((card, index) => (
-        <div key={index} className="grid grid-rows-[auto,1fr] bg-[linear-gradient(var(--background2))] shadow-[--badass] shadow-md border border-[--bright-pink] rounded-[8px] h-full overflow-hidden">
+        <div key={index} className="grid grid-rows-[auto,1fr] bg-[linear-gradient(var(--background2))] shadow-[--badass] shadow-md mb-6 border border-[--bright-pink] rounded-[8px] h-full overflow-hidden">
           <div className="relative mb-8">
             <img src={card.image} className="w-full max-h-[132px] object-center object-fit card-image" alt="card image" />
             <div className="bottom-0 left-0 absolute flex flex-col justify-end items-start mb-4 ml-4 w-full h-full text-white">
@@ -87,8 +87,8 @@ function TopicCards() {
             </div>
             <div className="grid col-start-1 col-end-[-1] m-[0_auto]"><p className="grid col-start-2 col-end-[3] min-h-[100px] font-normal text-[clamp(1.2rem,1vw,1.6rem)] text-pretty col">{card.description}</p></div>
             <div className="place-items-center grid my-0 pb-12 w-full">
-              <Button variant="outline" className="bg-[--bright-pink] mt-0 mb-0 rounded-[8px] w-[clamp(200px,20vw,300px)] text-[--badass] text-[clamp(0.6rem,2vw,1rem)">
-                Learn more
+              <Button variant="outline" className="bg-[--bright-pink] mt-0 mb-0 rounded-[8px] w-[142px] text-[--badass] text-[clamp(0.6rem,2vw,1rem)">
+                wanna know more?
               </Button>
             </div>
 

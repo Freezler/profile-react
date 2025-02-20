@@ -47,15 +47,15 @@ export function Codepen() {
       })
     }
 
-    const digits = Array.from({ length: 32 }, () => [
+    const digits = Array.from({ length: 25 }, () => [
       generateRandomNumber(5),
       generateRandomNumber(5),
-    ]).concat(Array.from({ length: 12 }, () => [1, 1]))
+    ]).concat(Array.from({ length: 10 }, () => [1, 1]))
     const items = digits.map(([height, width], index) => ({
       id: index,
       height,
       width,
-      imageUrl: `https://picsum.photos/id/${generateRandomNumber(128)}/1200/800?random=${index}`,
+      imageUrl: `https://picsum.photos/id/${generateRandomNumber(100)}/1200/800?random=${index}`,
     }))
 
     setGalleryItems(items)
@@ -68,15 +68,13 @@ export function Codepen() {
     toggleOverlayVisibility()
   }
 
-  const shuffleGallery = () => {
-    setGalleryItems((items) => {
-      for (let i = items.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [items[i], items[j]] = [items[j], items[i]]
-      }
-      return [...items]
-    })
-  }
+  const shuffleGallery = () =>
+    setGalleryItems((items) =>
+      items
+        .map((value) => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value)
+    )
 
   return (
     <div className="items-center pt-8 font-[var(--font)] text-[clamp(0.8rem,2vw,1.2rem)] text-[var(--badass)]">

@@ -307,7 +307,7 @@ p {
   --azure-web: #f1ffffff;
   --russian-violet: rgba(37, 19, 81, 0.563);
   --rich-black: rgba(0, 18, 37, 0.695);
-  --background: 130deg in oklch, var(--russian-violet) 17%, var(--rich-black) 100%;
+  --background3: 130deg in oklch  hue, var(--badass) 17%, var(--bright-pink) 100%;
   --background2: 130deg in oklch, var(--rich-black) 17%, var(--russian-violet) 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -363,29 +363,17 @@ img {
   opacity: 0;
   overflow-y: scroll;
   position: absolute;
-  place-self: end;
   transform: translateX(0);
-  width: 380px;
+  height: 100vh;
   z-index: 100;
 
   @media screen and (max-width: 460px) {
     width: 100vw;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
   }
 }
 
-#mobileMenu > div {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
+
 
 #mobileMenu[data-open='false'] {
   animation: smoothSlideOut 0.3s ease-in-out forwards;
@@ -401,7 +389,7 @@ img {
   display: none;
 }
 
-#mobileMenu > a:hover {
+#mobileMenu a:hover {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.9s ease-in-out;
@@ -420,42 +408,45 @@ ul.socialIcons {
   position: relative;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   width: 100%;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-top: 4rem;
 }
 
 ul.socialIcons li {
   list-style: none;
 }
 
-ul.socialIcons li a {
+.socialIcons li a {
   background: var(--rich-black);
   text-align: center;
   line-height: 64px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   padding: 0 20px;
   display: block;
+  margin: 10px 0px;
   border-radius: 50%;
-  margin-top: 4rem;
+  margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
-  border: 4px double var(--pear);
+  border:8px ridge var(--pear);
   z-index: 1;
   transition: all 0.5s ease-in-out;
 }
 
-ul.socialIcons li:hover a {
+.socialIcons li:hover a {
   background: var(--rich-black);
   text-align: center;
-  line-height: 64px;
-  font-size: 2rem;
   padding: 0 20px;
   display: block;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 4px double var(--bright-pink);
+  border: 8px ridge var(--bright-pink);
   z-index: 1;
 }
 
@@ -488,19 +479,19 @@ ul.socialIcons li a:hover:before {
 }
 
 ul.socialIcons li:nth-child(1) a:before {
-  background: linear-gradient(130deg, red, blue);
+  background: linear-gradient(in oklch 130deg, red, blue);
 }
 
 ul.socialIcons li:nth-child(2) a:before {
-  background: linear-gradient(130deg, black, darkblue);
+  background: linear-gradient(in oklch 130deg, black, darkblue);
 }
 
 ul.socialIcons li:nth-child(3) a:before {
-  background: linear-gradient(130deg, blue, slateblue);
+  background: linear-gradient(in oklch 130deg, blue, slateblue);
 }
 
 ul.socialIcons li:nth-child(4) a:before {
-  background: linear-gradient(130deg, black, darkmagenta);
+  background: linear-gradient(in oklch 130deg, black, darkmagenta);
 }
 
 @keyframes smoothSlideIn {
@@ -552,11 +543,11 @@ a:hover {
 
 .rocket {
   animation: rocket-1 10s ease-in-out infinite;
-  rotate: 0deg;
+  rotate: 15deg;
 }
 
 body {
-  background: linear-gradient(140deg in oklch, var(--rich-black) 0%, var(--russian-violet) 100%);
+  background: linear-gradient(130deg in oklch, var(--rich-black) 0%, var(--russian-violet) 100%);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

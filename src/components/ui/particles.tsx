@@ -50,30 +50,33 @@ export function ParticlesComponent() {
         events: {
           onClick: {
             enable: true,
-            mode: 'repulse',
+            mode: 'attract',
           },
           onHover: {
             enable: true,
-            mode: 'attract',
+            mode: 'repulse',
           },
 
         },
         modes: {
           push: {
-            quantity: 100,
-            size: 1,
+            quantity: 1,
+            size: 100,
+            smooth: true,
           },
           repulse: {
-            distance: 100,
-            duration: 1000,
-
+            distance: 50,
+            duration: 300,
+            enable: true,
+            speed: 1,
+            smooth: true,
           },
           attract: {
-            distance: 100,
+            distance: 800,
             duration: 100,
             enable: true,
-            maxSpeed: 50,
-            speed: 1.5,
+            speed: 5,
+            smooth: true,
           },
         },
       },
@@ -82,11 +85,11 @@ export function ParticlesComponent() {
           value: 'hsla(0, 100%, 100%, 0.9)',
         },
         links: {
-          color: 'hsla(275, 100%, 50%, 0.9)',
+          color: 'hsla(165, 100%, 50%, 0.9)',
           distance: 100,
           enable: true,
           opacity: 1,
-          width: 1,
+          width: 1.5,
 
         },
         move: {
@@ -96,7 +99,7 @@ export function ParticlesComponent() {
             default: OutMode.bounce,
           },
           random: true,
-          speed: 0.9,
+          speed: 2,
           straight: false,
           smooth: true,
         },
