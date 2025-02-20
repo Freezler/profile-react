@@ -1,11 +1,7 @@
 'use client'
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { Sling as Hamburger } from 'hamburger-react'
-
 import { useEffect, useState } from 'react'
-
-import * as React from 'react'
-
 import { SocialIcons } from './Social'
 
 function Header() {
