@@ -1,12 +1,11 @@
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
+
 } from '@/components/ui/navigation-menu'
 import { Sling as Hamburger } from 'hamburger-react'
 import { useEffect, useState } from 'react'
@@ -76,14 +75,14 @@ function Header() {
         className="relative antialiased  top-0 right-0 bottom-0 place-items-center [&>li>a]:text-[2rem]  justify-around text-lg  z-[300] block md:hidden  p-8 h-[100svh] text-zinc-100"
         data-open={isOpen ? 'true' : 'false'}
       >
-        <header className="absolute top-[19px] right-2 left-0 flex space-x-0 [&>a]:text-[2.2rem] mr-auto text-zinc-100">
+        <header className="absolute top-[19px] right-2 left-0 flex space-x-0 [&>a]:text-[2.2rem] mr-auto text-zinc-100 [&>a]:uppercase ">
           <a href="#" className="mx-8">MENU</a>
         </header>
         <img src="https://i.pravatar.cc/250?img=65" alt="avatar" className="mx-auto my-0 mt-12 mb-0 rounded-full w-[100px] h-[100px]" />
         <li className="z-[50] py-0 [&li>a]:hover:text-violet-500">
           <a href="#">Home</a>
         </li>
-        <li className=" [&>a]:hover:text-violet-500">
+        <li className=" [&>a]:hover:text-violet-500 ">
           <a href="#">About Me</a>
         </li>
         <li className=" [&>a]:hover:text-violet-500 ">
