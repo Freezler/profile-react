@@ -27,7 +27,7 @@ export function SocialIcons() {
           </a>
         </li>
       </ul>
-      <h3 className="bg-clip-text bg-gradient-to-tr from-[#0dc4ee] to-[#640d89] drop-shadow-[0_0_3px_rgba(155,5,5,0.95)] mb-4 border-[--badass] border-y-2 font-bold text-[clamp(1.2rem,2vw,1.6rem)] text-transparent text-center tracking-wider">WHERE TO FIND ME</h3>
+      <h3 className="bg-clip-text bg-gradient-to-tr from-[#87ddf0] to-[#deb7ef] mb-8 border-[--badass] border-y-4 border-double font-bold text-[clamp(1.2rem,2vw,1.6rem)] text-transparent text-center tracking-wider">WHERE TO FIND ME</h3>
     </div>
   )
 }

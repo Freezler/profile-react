@@ -307,7 +307,7 @@ p {
   --azure-web: #f1ffffff;
   --russian-violet: rgba(37, 19, 81, 0.563);
   --rich-black: rgba(0, 18, 37, 0.695);
-  --background3: 130deg in oklch  hue, var(--badass) 17%, var(--bright-pink) 100%;
+  --background3: 130deg in oklch hue, var(--badass) 17%, var(--bright-pink) 100%;
   --background2: 130deg in oklch, var(--rich-black) 17%, var(--russian-violet) 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -373,8 +373,6 @@ img {
   }
 }
 
-
-
 #mobileMenu[data-open='false'] {
   animation: smoothSlideOut 0.3s ease-in-out forwards;
   opacity: 0;
@@ -400,6 +398,41 @@ img {
 
   @media screen and (max-width: 468px) {
     height: 100svh;
+  }
+}
+
+/* Typewriter effect 1 */
+/*************  ✨ Codeium Command 🌟  *************/
+.typing-demo {
+  /******  01806f32-1377-4ef0-ace4-76eecb95cf6c  *******/
+  width: 24ch;
+  animation:
+    typing 2s steps(29),
+    blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 24px solid rgba(7, 252, 215, 0.601);
+  border-spacing: 8px;
+  font-family: monospace;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: var(--badass);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .typing-demo {
+    animation: none;
   }
 }
 
@@ -433,7 +466,7 @@ ul.socialIcons li {
   margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
-  border:8px ridge var(--pear);
+  border: 8px ridge var(--pear);
   z-index: 1;
   transition: all 0.5s ease-in-out;
 }

@@ -1,14 +1,10 @@
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-
-} from '@/components/ui/navigation-menu'
+'use client'
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { Sling as Hamburger } from 'hamburger-react'
+
 import { useEffect, useState } from 'react'
+
+import * as React from 'react'
 
 import { SocialIcons } from './Social'
 
@@ -24,31 +20,34 @@ function Header() {
       <div className="flex justify-start space-x-4 [&>a]:text-[2rem] mr-auto text-zinc-100">
         <a href="#">RLDV</a>
       </div>
-      <div className="gap-3 font-4xl [&>a]:text-lg text-zinc-100 hidden md:flex align-center md:place-self-center font-xl">
+      <div className=" font-4xl [&>a]:text-lg text-zinc-100 hidden md:flex align-center md:place-self-center font-xl">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuLink className="font-3xl font-bold" href="#">HOME</NavigationMenuLink>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#">HOME</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="#">ABOUT ME</NavigationMenuLink>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#">ABOUT</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-[900] f">WEBDEB</NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#">LINKS</NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem className={navigationMenuTriggerStyle()}>
+              <NavigationMenuTrigger className="">WEBDEB</NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-red-500 px-8 py-4">
                 <NavigationMenuLink>
-                  <div className="flex justify-center items-center w-[300px] h-14uppercase transition-all duration-400">
-                    <ul className="flex gap-2">
-                      <li>my projects</li>
-                      <li>CSS</li>
-                      <li>JS</li>
-                    </ul>
-                  </div>
+                  <span className="font-bold">MDN</span>
+                </NavigationMenuLink>
+                <NavigationMenuLink>
+                  <span className="font-bold">MDN</span>
+                </NavigationMenuLink>
+                <NavigationMenuLink>
+                  <span className="font-bold">MDN</span>
+                </NavigationMenuLink>
+                <NavigationMenuLink>
+                  <span className="font-bold">MDN</span>
                 </NavigationMenuLink>
               </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#">LINKS</NavigationMenuLink>
             </NavigationMenuItem>
 
           </NavigationMenuList>
