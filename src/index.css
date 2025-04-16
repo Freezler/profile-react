@@ -567,7 +567,6 @@ ul.socialIcons li {
 }
 
 .socialIcons li:hover a {
-  background: var(--rich-black);
   text-align: center;
   padding: 0 20px;
   display: block;
