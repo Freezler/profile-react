@@ -26,7 +26,7 @@ export function LargeWelcome() {
 
           </div>
 
-          <div className="text-center btnWrapper  [&>button]:bg-violet-400/20 [&>button]:text-blue-300 [&>button]:text-[clamp(0.8rem,2vw,1rem)] [&>button]:px-4 [&>button]:py-3 [&>button]:rounded-[7px] mb-5  gap-3 flex items-center justify-center">
+          <div className="flex justify-center items-center gap-3 [&>button]:bg-violet-400/20 mb-5 [&>button]:px-4 [&>button]:py-3 [&>button]:rounded-[7px] [&>button]:text-[clamp(0.8rem,2vw,1rem)] [&>button]:text-blue-300 text-center btnWrapper">
 
             <button className="hover:bg-violet-400/60 uppercase transition-all duration-400">
               Get started

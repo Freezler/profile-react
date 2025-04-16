@@ -12,56 +12,35 @@ interface TopicCardContent {
 
 const topicCardContent: TopicCardContent[] = [
   {
-    title: 'Randy Lee de vries',
-    subTitle: 'javaScript developer',
+    title: 'Who Am I?',
+    subTitle: 'Full Stack Developer',
     description:
-      'I am a JavaScript developer from the Netherlands, the Amsterdam region to be precise.',
-    image: 'https://picsum.photos/id/1078/1024/768',
-    technologies: ['JS', 'CSS', 'HTML'],
+      'With a passion for creating intuitive and efficient web applications, I specialize in modern JavaScript frameworks and responsive design. Based in the Amsterdam region, I bring Dutch precision to every project I undertake.',
+    image: 'https://picsum.photos/id/251/1024/768',
+    technologies: ['TypeScript', 'React', 'Node.js'],
     started: '2018',
-    group: 'ITMG (IT Management group)',
+    group: 'Full Stack Development',
   },
   {
-    title: 'What do I do?',
-    subTitle: 'Frontend developer',
+    title: 'Frontend Expertise',
+    subTitle: 'UI/UX Development',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.',
-    image: 'https://picsum.photos/id/1080/1024/768',
-    technologies: ['Vue', 'Svelte', 'React'],
+      'I create responsive, accessible, and performant web applications using modern frameworks. My focus is on building user-centric interfaces that provide excellent user experiences across all devices.',
+    image: 'https://picsum.photos/id/20/1024/768',
+    technologies: ['React', 'Vue', 'TailwindCSS'],
     started: '2019',
-    group: 'Frontend developers',
+    group: 'Frontend Development',
   },
   {
-    title: 'What do I know?',
-    subTitle: 'Backend developer',
+    title: 'Backend Skills',
+    subTitle: 'Server & API Development',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.',
-    image: 'https://picsum.photos/id/1080/1024/768',
-    technologies: ['Express', 'Nuxt', 'Sveltekit'],
+      'Experienced in building robust backend systems, RESTful APIs, and database architectures. I work with modern frameworks to create scalable and maintainable server-side solutions.',
+    image: 'https://picsum.photos/id/160/1024/768',
+    technologies: ['Express', 'PostgreSQL', 'AWS'],
     started: '2020',
-    group: 'Backend developers',
+    group: 'Backend Development',
   },
-  {
-    title: 'What do I do?',
-    subTitle: 'Fullstack developer',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.',
-    image: 'https://picsum.photos/id/1080/1024/768',
-    technologies: ['React', 'TypeScript', 'JavaScript'],
-    started: '2020',
-    group: 'Fullstack developers',
-  },
-  {
-    title: 'What do I know?',
-    subTitle: 'UX Designer',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.',
-    image: 'https://picsum.photos/id/1080/1024/768',
-    technologies: ['Figma', 'Sketch', 'Adobe XD'],
-    started: '2019',
-    group: 'UX Designers',
-  },
-
 ]
 
 function TopicCards() {
@@ -78,9 +57,13 @@ function TopicCards() {
           </div>
 
           <div className="items-end gap-0 grid grid-rows-[auto_1fr] mx-8 align-bottom">
-            <div className="justify-content-space-evenly gap-4 grid grid-cols-3 mb-2">
+            <div className="justify-content-space-evenly gap-2 grid grid-cols-3 mb-4">
               {card.technologies.map((tech, techIndex) => (
-                <span key={techIndex} className="text-[--bright-pink] grid bg-[--badass] px- py-1 rounded-xl w-auto text-sm text-center uppercase text-wrap">
+                <span
+                  key={techIndex}
+                  className="hover:z-10 bg-[--badass] px-2 py-1.5 rounded-xl hover:overflow-visible font-medium text-[--bright-pink] text-sm text-center truncate hover:text-clip uppercase"
+                  title={tech}
+                >
                   {tech}
                 </span>
               ))}

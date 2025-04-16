@@ -50,7 +50,7 @@ export function ParticlesComponent() {
         events: {
           onClick: {
             enable: true,
-            mode: 'attract',
+            mode: 'push',
           },
           onHover: {
             enable: true,
@@ -60,15 +60,17 @@ export function ParticlesComponent() {
         },
         modes: {
           push: {
-            quantity: 1,
+            quantity: 10,
             size: 100,
             smooth: true,
+            speed: 2,
+            duration: 300,
           },
           repulse: {
-            distance: 50,
-            duration: 300,
+            distance: 10,
+            duration: 900,
             enable: true,
-            speed: 1,
+            speed: 5,
             smooth: true,
           },
           attract: {
