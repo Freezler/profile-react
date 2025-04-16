@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const lines = [
   'Hello there!',
@@ -52,7 +52,7 @@ export default function TypingDemo() {
 
   return (
     <div className="typing-demo" style={{ fontFamily: 'monospace', fontSize: 'clamp(1.2rem,2.5vw,2rem)', width: '100%', maxWidth: '48ch', minWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
-      {lines.map((line, idx) => (
+      {lines.map((_, idx) => (
         <div
           key={idx}
           className="typing-line"
