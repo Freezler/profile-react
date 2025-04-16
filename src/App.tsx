@@ -1,6 +1,7 @@
 import Codepen from './components/Codepen'
 import Header from './components/Header'
 import Herobg from './components/herobg'
+import LazyAnimatedSection from './components/LazyAnimatedSection'
 import { SocialIcons } from './components/Social'
 import TopicCards from './components/TopicCards'
 import TypingDemo from './components/TypingDemo'
@@ -19,12 +20,17 @@ function App() {
             <h1 className="z-[1000] bg-[linear-gradient(in_oklch_decreasing_hue_125deg,var(--bright-pink),rgba(46,147,236,.9))] bg-clip-text mb-8 font-[Inter] font-extrabold text-[clamp(2.4rem,6vw,6rem)] text-transparent uppercase text-nowrap tracking-thight">Randy de vries</h1>
             <TypingDemo />
           </div>
+          <div className="scroll-indicator">
+            <div className="mouse"></div>
+          </div>
         </section>
         <section className="place-items-center grid pb-4">
           <Herobg />
         </section>
         <section className="mt-16">
-          <TopicCards />
+          <LazyAnimatedSection>
+            <TopicCards />
+          </LazyAnimatedSection>
         </section>
         <section>
           <Codepen />
