@@ -7,7 +7,7 @@ const lines = [
   'Let\'s make something cool!',
 ]
 
-const TYPING_SPEED = 50 // ms per character
+const TYPING_SPEED = 45 // ms per character
 const LINE_PAUSE = 500 // ms pause between lines
 
 export default function TypingDemo() {
@@ -41,7 +41,6 @@ export default function TypingDemo() {
       }
     }
     else {
-      // All lines done, keep cursor blinking on last line
       cursorInterval = setInterval(() => setShowCursor(c => !c), 500)
     }
     return () => {
@@ -51,7 +50,7 @@ export default function TypingDemo() {
   }, [charIndex, currentLine])
 
   return (
-    <div className="typing-demo" style={{ fontFamily: 'monospace', fontSize: 'clamp(1.2rem,2.5vw,2rem)', width: '100%', maxWidth: '48ch', minWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
+    <div className="typing-demo" style={{ fontFamily: 'monospace', fontSize: 'clamp(1.2rem,2.5vw,1.6rem)', width: '100%', maxWidth: '48ch', minWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
       {lines.map((_, idx) => (
         <div
           key={idx}
@@ -78,7 +77,7 @@ export default function TypingDemo() {
                 display: 'inline-block',
                 width: '0',
                 height: '1em',
-                verticalAlign: 'middle', // aligns with tallest letter
+                verticalAlign: 'middle',
                 borderRight: showCursor || idx !== lines.length - 1 ? '2px solid var(--bright-pink)' : '2px solid transparent',
                 marginLeft: 0,
                 padding: 0,

@@ -16,6 +16,8 @@ export function SocialIcons() {
         {socialLinks.map(({ icon, href, label }) => (
           <li key={href}>
             <a
+              target="_blank"
+              rel="noopener noreferrer"
               href={href}
               aria-label={label}
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bright-pink focus-visible:ring-offset-2"

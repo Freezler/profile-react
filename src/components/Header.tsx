@@ -86,7 +86,7 @@ function Header() {
       </div>
       <ul
         id="mobileMenu"
-        className="md:hidden block top-0 right-0 bottom-0 z-[300] relative justify-evenly place-items-center p-8 h-[100svh] text-zinc-100 [&>li>a]:text-[2rem] text-lg antialiased"
+        className="md:hidden top-0 right-0 bottom-0 left-0 z-[300] fixed flex flex-col justify-between items-center p-8 w-screen h-[100svh] text-zinc-100 [&>li>a]:text-[2rem] text-lg antialiased"
         data-open={isOpen ? 'true' : 'false'}
         role="menu"
       >
