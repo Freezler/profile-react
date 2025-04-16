@@ -10,9 +10,9 @@ export function SocialIcons() {
   ]
 
   return (
-    <div className="z-[1500] relative place-self-center grid">
-      <h3 className="bg-clip-text bg-gradient-to-tr from-[#87ddf0] to-[#deb7ef] border-[--badass] border-y-4 border-double font-bold text-[clamp(1.2rem,2vw,1.6rem)] text-transparent text-center tracking-wider">WHERE TO FIND ME</h3>
-      <ul className="gap-2 grid socialIcons">
+    <div className="z-[1500] flex flex-col justify-end items-center bg-[linear-gradient(var(--background2))] backdrop-blur-sm mt-12 mb-4 w-full max-w-[100svw] text-zinc-100 antialiased select-none">
+      <h3 className="bg-clip-text bg-gradient-to-tr from-[#87ddf0] to-[#deb7ef] border-[--badass] border-y-4 border-double font-bold text-[clamp(1.2rem,2vw,1.6rem)] text-transparent text-center">WHERE TO FIND ME</h3>
+      <ul className="grid socialIcons">
         {socialLinks.map(({ icon, href, label }) => (
           <li key={href}>
             <a

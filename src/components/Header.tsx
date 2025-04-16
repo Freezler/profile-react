@@ -93,15 +93,15 @@ function Header() {
         <header className="right-0 left-0 absolute flex space-x-4 mr-auto text-zinc-100 [&>a]:text-3xl">
           <span className="ml-7 text-[2rem] -translate-y-[12px]">MENU</span>
         </header>
-        <img src="https://i.pravatar.cc/250?img=65" alt="Profile avatar" className="mx-auto my-0 mt-12 mb-0 rounded-full w-[100px] h-[100px]" />
+        <img src="https://i.pravatar.cc/250?img=65" alt="Profile avatar" className="mx-auto my-0 mt-16 mb-0 rounded-full w-[100px] h-[100px]" />
         {navigationItems.map(item => (
-          <li key={item.label} className="z-[50] py-0 [&>a]:hover:text-violet-500" role="menuitem">
+          <li key={item.label} className="z-[50] py-0 pt-4 [&>a]:hover:text-violet-500" role="menuitem">
             <a href={item.children ? '#' : item.href}>
               {item.label}
             </a>
           </li>
         ))}
-        <footer className="right-0 bottom-0 left-0 relative place-items-center">
+        <footer className="right-0 bottom-2 left-0 relative place-items-end pt-8">
           <SocialIcons />
         </footer>
       </ul>
