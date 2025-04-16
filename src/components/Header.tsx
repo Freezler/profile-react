@@ -91,7 +91,7 @@ function Header() {
         role="menu"
       >
         <header className="right-0 left-0 absolute flex space-x-4 mr-auto text-zinc-100 [&>a]:text-3xl">
-          <span className="mr-2 text-[2rem]">MENU</span>
+          <span className="ml-7 text-[2rem] -translate-y-[12px]">MENU</span>
         </header>
         <img src="https://i.pravatar.cc/250?img=65" alt="Profile avatar" className="mx-auto my-0 mt-12 mb-0 rounded-full w-[100px] h-[100px]" />
         {navigationItems.map(item => (
