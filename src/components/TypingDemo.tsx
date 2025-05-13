@@ -8,7 +8,7 @@ const lines = [
 ]
 
 const TYPING_SPEED = 45 // ms per character
-const LINE_PAUSE = 500 // ms pause between lines
+const LINE_PAUSE = 450 // ms pause between lines
 
 export default function TypingDemo() {
   const [currentLine, setCurrentLine] = useState(0)
@@ -50,7 +50,7 @@ export default function TypingDemo() {
   }, [charIndex, currentLine])
 
   return (
-    <div className="typing-demo" style={{ fontFamily: 'monospace', fontSize: 'clamp(1.2rem,2.5vw,1.6rem)', width: '100%', maxWidth: '48ch', minWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
+    <div className="typing-demo" style={{ fontFamily: 'Inter', fontSize: 'clamp(1.2rem,2.5vw,1.6rem)', width: '100%', height: '100%', maxWidth: '48ch', minWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
       {lines.map((_, idx) => (
         <div
           key={idx}
@@ -65,11 +65,10 @@ export default function TypingDemo() {
             textAlign: 'center',
             position: 'relative',
             margin: '0 auto',
-            color: 'var(--bright-pink)',
-            fontFamily: 'Inter',
-            fontSize: 'clamp(1.2rem,2.5vw,1.6rem)',
+            color: 'var(--badass)',
+
             fontWeight: '400',
-            lineHeight: '1.8',
+
             transition: 'color 0.3s ease-in-out',
             opacity: (idx === currentLine && currentLine < lines.length) || (idx === lines.length - 1 && currentLine === lines.length) ? 1 : 0.5,
           }}
