@@ -65,6 +65,13 @@ export default function TypingDemo() {
             textAlign: 'center',
             position: 'relative',
             margin: '0 auto',
+            color: 'var(--bright-pink)',
+            fontFamily: 'Inter',
+            fontSize: 'clamp(1.2rem,2.5vw,1.6rem)',
+            fontWeight: '400',
+            lineHeight: '1.8',
+            transition: 'color 0.3s ease-in-out',
+            opacity: (idx === currentLine && currentLine < lines.length) || (idx === lines.length - 1 && currentLine === lines.length) ? 1 : 0.5,
           }}
         >
           <span style={{ position: 'relative', zIndex: 1 }}>

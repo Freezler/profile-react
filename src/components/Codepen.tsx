@@ -2,8 +2,6 @@ import autoAnimate from '@formkit/auto-animate'
 import { useEffect, useRef, useState } from 'react'
 import { Button } from './ui/button'
 
-const generateRandomNumber = (limit: number) => Math.floor(Math.random() * limit)
-
 interface GalleryItem {
   id: number
   height: number
@@ -15,7 +13,7 @@ function GalleryItemComponent({ item, onClick }: { item: GalleryItem, onClick: (
   return (
     <div className={`item h${item.height} v${item.width}`} onClick={onClick}>
       <img src={item.imageUrl} alt="" loading="lazy" data-index={item.id} />
-      <span className="text-[--bright-pink] bottom-0 absolute bg-[--badass] px-3 py-1 rounded-tr-2xl index">{item.id + 1}</span>
+      <span className="bottom-0 absolute bg-[--badass] px-3 py-1 rounded-tr-2xl text-[--bright-pink] index">{item.id + 1}</span>
       <div className="item__overlay">
         <button>View →</button>
       </div>
@@ -42,22 +40,22 @@ export function Codepen() {
   useEffect(() => {
     if (galleryRef.current) {
       autoAnimate(galleryRef.current, {
-        duration: 600, // Animation duration in milliseconds
-        easing: 'ease-in-out', // CSS easing function
+        duration: 600,
+        easing: 'ease-in-out',
       })
     }
-
-    const digits = Array.from({ length: 25 }, () => [
-      generateRandomNumber(5),
-      generateRandomNumber(5),
-    ]).concat(Array.from({ length: 10 }, () => [1, 1]))
+    // Original logic: random images, random sizes, possible repeats
+    const itemCount = 35
+    const digits = Array.from({ length: itemCount }, () => [
+      Math.ceil(Math.random() * 4),
+      Math.ceil(Math.random() * 4),
+    ])
     const items = digits.map(([height, width], index) => ({
       id: index,
       height,
       width,
-      imageUrl: `https://picsum.photos/id/${generateRandomNumber(100)}/1200/800?random=${index}`,
+      imageUrl: `https://picsum.photos/1200/800?random=${Math.floor(Math.random() * 1000)}`,
     }))
-
     setGalleryItems(items)
   }, [])
 
@@ -69,18 +67,18 @@ export function Codepen() {
   }
 
   const shuffleGallery = () =>
-    setGalleryItems((items) =>
+    setGalleryItems(items =>
       items
-        .map((value) => ({ value, sort: Math.random() }))
+        .map(value => ({ value, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value)
+        .map(({ value }) => value),
     )
 
   return (
     <div className="items-center pt-8 font-[var(--font)] text-[clamp(0.8rem,2vw,1.2rem)] text-[var(--badass)]">
       <div className="justify-center place-items-center grid w-full align-center">
         <h1 className="text-[clamp(2rem,5vw,3rem)] text-center leading-[1] title">CSS GRID GALLERY</h1>
-        <Button onClick={shuffleGallery} variant="outline" className="text-[--bright-pink] bg-[var(--badass)] mb-16 w-[clamp(200px,20vw,300px)] text-[clamp(1.2rem,2vw,1.6rem)]">
+        <Button onClick={shuffleGallery} variant="outline" className="bg-[var(--badass)] mb-16 w-[clamp(200px,20vw,300px)] text-[--bright-pink] text-[clamp(1.2rem,2vw,1.6rem)]">
           Shuffle Gallery!
         </Button>
       </div>

@@ -2,7 +2,7 @@ import ImageComponent from './ui/Image'
 
 export function Welcome() {
   return (
-    <div id="background" className="flex flex-col justify-center items-center mx-auto px-4 py-8 border-violet-300 sm:w-[min(100svw,364px)] xs:h-[min(100svh,364px)] min-h-[100svh] text-[rgb(241,237,237)] text-center">
+    <div id="background" className="z-[10] flex flex-col justify-center items-center bg-[linear-gradient(var(--background2))] backdrop-blur-sm mx-auto px-4 py-8 border-violet-300 sm:w-[min(100svw,364px)] xs:h-[min(100svh,364px)] min-h-[100svh] text-[rgb(241,237,237)] text-center">
       <ImageComponent />
       <div className="bg-[rgba(195,82,178,0.1)] sm:bg-violet-400/80 backdrop-blur-sm px-4 py-6 border-1 border-neutral-100 rounded-[24px] wrapper">
         <h1 className="font-bold text-[clamp(2rem,5vw,3rem)]">Who am I?</h1>
@@ -17,4 +17,3 @@ export function Welcome() {
     </div>
   )
 }
-
