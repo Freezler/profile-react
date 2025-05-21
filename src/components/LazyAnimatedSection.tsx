@@ -1,21 +1,19 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 
 interface LazyAnimatedSectionProps {
   children: React.ReactNode
+  amount?: number // how much of the section must be visible to trigger (0-1)
+  delay?: number // optional animation delay in seconds
 }
 
-export default function LazyAnimatedSection({ children }: LazyAnimatedSectionProps) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
+export default function LazyAnimatedSection({ children, amount = 0.2, delay = 0 }: LazyAnimatedSectionProps) {
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, x: 100, y: 10 }}
-      exit={{ opacity: 0, x: -100, y: -100 }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      exit={{ opacity: 0, x: -100, y: -100 }}
+      viewport={{ once: true, amount }}
+      transition={{ duration: 0.6, ease: 'easeOut', delay }}
       style={{ width: '100%' }}
     >
       {children}

@@ -68,7 +68,7 @@ function TopicCards() {
                 </span>
               ))}
             </div>
-            <div className="grid col-start-1 col-end-[-1] m-[0_auto]"><p className="grid col-start-2 col-end-[3] min-h-[100px] font-normal text-[clamp(1.2rem,1vw,1.6rem)] text-pretty col">{card.description}</p></div>
+            <div className="grid col-start-0 col-end-[-1] m-[0_auto]"><p className="grid col-start-2 col-end-[3] w-[clamp(300px,50%,500px)] min-h-[100px] font-normal text-[clamp(1.2rem,1vw,1.6rem)] text-pretty col">{card.description}</p></div>
             <div className="place-items-center grid my-0 pb-12 w-full">
               <Button variant="outline" className="bg-[--bright-pink] mt-0 mb-0 rounded-[8px] w-[142px] text-[--badass] text-[clamp(0.6rem,2vw,1rem)">
                 wanna know more?

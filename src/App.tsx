@@ -42,8 +42,10 @@ function App() {
             <div className="mouse"></div>
           </div>
         </section>
-        <section className="place-items-center grid pb-4">
-          <Herobg />
+        <section className="justify-items-center place-items-center grid mx-auto pb-4">
+          <LazyAnimatedSection>
+            <Herobg />
+          </LazyAnimatedSection>
         </section>
         <section className="place-items-center grid mt-8">
           <LazyAnimatedSection>
@@ -52,15 +54,17 @@ function App() {
         </section>
         {/* Spotify Playlist Embed - matches provided iframe exactly */}
         <section className="spotify-embed-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-          <iframe
-            style={{ borderRadius: '12px' }}
-            src="https://open.spotify.com/embed/playlist/5ABrNQH1KjxXpjwIJOGrLu?utm_source=generator"
-            width="100%"
-            height="352"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            title="Spotify Playlist"
-          />
+          <LazyAnimatedSection>
+            <iframe
+              style={{ borderRadius: '12px' }}
+              src="https://open.spotify.com/embed/playlist/5ABrNQH1KjxXpjwIJOGrLu?utm_source=generator"
+              width="100%"
+              height="352"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Spotify Playlist"
+            />
+          </LazyAnimatedSection>
         </section>
         <section>
           <Codepen />
