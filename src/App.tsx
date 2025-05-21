@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Herobg from './components/herobg'
 import LazyAnimatedSection from './components/LazyAnimatedSection'
 import { SocialIcons } from './components/Social'
+import { SpotifyPlaylist } from './components/SpotifyPlaylist'
 import TopicCards from './components/TopicCards'
 import TypingDemo from './components/TypingDemo'
 import ParticlesComponent from './components/ui/particles'
@@ -43,7 +44,7 @@ function App() {
         <section className="place-items-center grid pb-4">
           <Herobg />
         </section>
-        <section className="place-items-center grid mt-16">
+        <section className="place-items-center grid mt-8">
           <LazyAnimatedSection>
             <TopicCards />
           </LazyAnimatedSection>
@@ -56,6 +57,7 @@ function App() {
       </main>
 
       <footer className="bottom-0 z-100 relative place-items-center max-w-[100svw]">
+        <SpotifyPlaylist playlistId="37i9dQZF1EIeZgt7saIAHr" />
         <SocialIcons />
       </footer>
     </div>

@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button'
 export default function HeroSectionGradientBackground() {
   return (
     <>
-      <div className="bottom-0 z-[10] relative flex mx-auto mt-8 w-100 h-100 overflow-hidden background-[linear-gradient(var(--background3))]">
+      <div className="bottom-0 z-[10] relative flex mx-auto mt-0 w-100 h-100 overflow-hidden background-[linear-gradient(var(--background3))]">
         <div className="z-10">
-          <div className="mx-auto pt-10 lg:pt-12">
+          <div className="mx-auto pt-0 lg:pt-12">
             <div className="mx-auto text-center">
               <div className="mt-0">
                 <h1 className="font-extrabold text-[white] text-3xl lg:text-5xl tracking-tight">
