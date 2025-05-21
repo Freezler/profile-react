@@ -30,9 +30,11 @@ function App() {
         <Header />
       </header>
       <main className="gap-4 grid min-h-[100%]">
-        <section id="particles" className="top-0 left-0 relative flex flex-col justify-center min-h-[70svh]">
-          <ParticlesComponent />
-          <div className="top-1/2 left-1/2 absolute items-center place-items-center grid px-4 w-full [&>p]:text-[--bright-pink] -translate-x-1/2 -translate-y-1/2">
+        <section id="particles" className="top-0 left-0 relative flex flex-col justify-center min-h-[60svh] overflow-hidden">
+          <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+            <ParticlesComponent />
+          </div>
+          <div className="top-1/2 left-1/2 absolute items-center place-items-center grid px-4 w-full [&>p]:text-[--bright-pink] -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 1 }}>
             <h1 className="z-[1000] bg-[linear-gradient(in_oklch_decreasing_hue_125deg,var(--bright-pink),rgba(46,147,236,.9))] bg-clip-text mb-8 font-[Inter] font-extrabold text-[clamp(2.4rem,6vw,6rem)] text-transparent uppercase text-nowrap tracking-thight">Randy de vries</h1>
             <TypingDemo />
           </div>
@@ -49,7 +51,7 @@ function App() {
           </LazyAnimatedSection>
         </section>
         {/* Spotify Playlist Embed - matches provided iframe exactly */}
-        <div className="spotify-embed-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <section className="spotify-embed-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <iframe
             style={{ borderRadius: '12px' }}
             src="https://open.spotify.com/embed/playlist/5ABrNQH1KjxXpjwIJOGrLu?utm_source=generator"
@@ -59,7 +61,7 @@ function App() {
             loading="lazy"
             title="Spotify Playlist"
           />
-        </div>
+        </section>
         <section>
           <Codepen />
         </section>
