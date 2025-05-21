@@ -67,7 +67,9 @@ function App() {
           </LazyAnimatedSection>
         </section>
         <section>
-          <Codepen />
+          <LazyAnimatedSection>
+            <Codepen />
+          </LazyAnimatedSection>
         </section>
         <Herobg />
 

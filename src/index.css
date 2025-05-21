@@ -401,6 +401,17 @@ img {
   justify-content: center;
   grid-gap: 16px;
   place-content: center;
+  width: 100%;
+  min-width: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 80px;
+    grid-gap: 8px;
+    padding: 0 4px;
+  }
 }
 
 /* Typewriter effect 1 */
