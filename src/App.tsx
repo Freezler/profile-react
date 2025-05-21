@@ -4,7 +4,6 @@ import Header from './components/Header'
 import Herobg from './components/herobg'
 import LazyAnimatedSection from './components/LazyAnimatedSection'
 import { SocialIcons } from './components/Social'
-import { SpotifyPlaylist } from './components/SpotifyPlaylist'
 import TopicCards from './components/TopicCards'
 import TypingDemo from './components/TypingDemo'
 import ParticlesComponent from './components/ui/particles'
@@ -49,6 +48,18 @@ function App() {
             <TopicCards />
           </LazyAnimatedSection>
         </section>
+        {/* Spotify Playlist Embed - matches provided iframe exactly */}
+        <div className="spotify-embed-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <iframe
+            style={{ borderRadius: '12px' }}
+            src="https://open.spotify.com/embed/playlist/5ABrNQH1KjxXpjwIJOGrLu?utm_source=generator"
+            width="100%"
+            height="352"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Spotify Playlist"
+          />
+        </div>
         <section>
           <Codepen />
         </section>
@@ -57,7 +68,7 @@ function App() {
       </main>
 
       <footer className="bottom-0 z-100 relative place-items-center max-w-[100svw]">
-        
+
         <SocialIcons />
       </footer>
     </div>
