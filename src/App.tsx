@@ -57,7 +57,7 @@ function App() {
       </main>
 
       <footer className="bottom-0 z-100 relative place-items-center max-w-[100svw]">
-        <SpotifyPlaylist playlistId="37i9dQZF1EIeZgt7saIAHr" />
+        
         <SocialIcons />
       </footer>
     </div>
