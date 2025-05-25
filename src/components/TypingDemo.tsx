@@ -68,7 +68,6 @@ export default function TypingDemo() {
             color: 'var(--badass)',
 
             fontWeight: '400',
-
             transition: 'color 0.3s ease-in-out',
             opacity: (idx === currentLine && currentLine < lines.length) || (idx === lines.length - 1 && currentLine === lines.length) ? 1 : 0.5,
           }}

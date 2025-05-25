@@ -8,7 +8,6 @@ import { SocialIcons } from './components/Social'
 import { Spotify } from './components/Spotify'
 import TopicCards from './components/TopicCards'
 import TypingDemo from './components/TypingDemo'
-import { NavigationMenu } from './components/ui/Navigation-menu'
 import ParticlesComponent from './components/ui/particles'
 
 function App() {

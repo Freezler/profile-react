@@ -1,5 +1,4 @@
 import Image from './ui/Image'
-import { ParticlesComponent } from './ui/particles'
 
 export function LargeWelcome() {
   return (
