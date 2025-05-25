@@ -4,7 +4,7 @@ export function SpotifyPlaylist() {
     <div className="spotify-embed-wrapper">
       <iframe
         style={{ borderRadius: '12px' }}
-        src="https://open.spotify.com/embed/playlist/5ABrNQH1KjxXpjwIJOGrLu?utm_source=generator"
+        src="https://open.spotify.com/playlist/2OsQYQx10iduZuzigXCgzt?si=0628170f62ef4745"
         width="100%"
         height="352"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"

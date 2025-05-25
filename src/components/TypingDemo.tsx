@@ -84,7 +84,7 @@ export default function TypingDemo() {
                 width: '0',
                 height: '1em',
                 verticalAlign: 'middle',
-                borderRight: showCursor || idx !== lines.length - 1 ? '2px solid var(--bright-pink)' : '2px solid transparent',
+                borderRight: showCursor || idx !== lines.length - 1 ? '2px solid var(--bright-pink)' : '0px solid transparent',
                 marginLeft: 0,
                 padding: 0,
                 background: 'transparent',

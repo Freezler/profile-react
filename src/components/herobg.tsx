@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 export default function HeroSectionGradientBackground() {
   return (
     <>
-      <div className="bottom-0 z-[10] relative flex mx-auto mt-0 w-100 h-100 overflow-hidden background-[linear-gradient(var(--background3))]">
+      <div className="z-[10] flex mx-auto mt-8 w-100 h-100 overflow-hidden background-[linear-gradient(var(--background3))]">
         <div className="z-10">
           <div className="mx-auto pt-0 lg:pt-12">
             <div className="mx-auto text-center">
@@ -18,8 +18,8 @@ export default function HeroSectionGradientBackground() {
                 </p>
               </div>
               <div className="flex justify-center gap-3 mt-4 [&>Button]:w-[clamp(148px,20vw,400px)]">
-                <Button size="lg" variant="destructive" className="bg-[--bright-pink] text-[--badass]">Get started</Button>
-                <Button size="lg" className="bg-[--badass] text-[--bright-pink]">
+                <Button size="lg" variant="outline" className="text-[--badass]">Get started</Button>
+                <Button size="lg" variant="outline" className="text-[--bright-pink]">
                   Learn more
                 </Button>
               </div>

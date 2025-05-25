@@ -33,7 +33,7 @@ function Header() {
   }, [isOpen])
 
   return (
-    <nav className="top-0 right-0 left-0 z-[400] fixed flex justify-between items-start bg-[linear-gradient(var(--background2))] backdrop-blur-sm mb-4 p-6 py-[8px] max-w-[100svw] antialiased select-none">
+    <nav className="top-0 right-0 left-0 z-[400] fixed flex justify-between items-start backdrop-blur-sm mb-4 p-6 py-[8px] max-w-[100svw] antialiased select-none">
       <div className="flex justify-start space-x-4 mr-auto text-zinc-100 [&>a]:text-[2rem]">
         <a href="/" aria-label="Home">RLDV</a>
       </div>
@@ -48,7 +48,7 @@ function Header() {
                         <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
                           {item.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-[linear-gradient(var(--background2))]">
+                        <NavigationMenuContent className="shadow-lg mt-14 rounded-md w-[30px]">
                           {item.children.map(child => (
                             <NavigationMenuLink
                               key={child.label}
@@ -86,22 +86,20 @@ function Header() {
       </div>
       <ul
         id="mobileMenu"
-        className="md:hidden top-0 right-0 bottom-0 left-0 z-[300] fixed flex flex-col justify-between items-center p-8 w-screen h-[100svh] text-zinc-100 [&>li>a]:text-[2rem] text-lg antialiased"
+        className="md:hidden top-0 right-0 bottom-0 left-0 z-[300] fixed flex flex-col justify-center items-center gap-8 w-screen h-[100svh] text-zinc-100 [&>li>a]:text-[2rem] text-lg antialiased"
         data-open={isOpen ? 'true' : 'false'}
         role="menu"
       >
-        <header className="right-0 left-0 absolute flex space-x-4 mr-auto text-zinc-100 [&>a]:text-3xl">
-          <span className="ml-7 text-[2rem] -translate-y-[12px]">MENU</span>
-        </header>
+
         <img src="https://i.pravatar.cc/250?img=65" alt="Profile avatar" className="mx-auto my-16 rounded-full w-[100px] h-[100px]" />
         {navigationItems.map(item => (
-          <li key={item.label} className="z-[50] py-0 pt-4 text-[--badass] [&>a]:hover:text-[--bright-pink]" role="menuitem">
+          <li key={item.label} className="z-[50] text-[--badass] [&>a]:hover:text-[--bright-pink]" role="menuitem">
             <a href={item.children ? '#' : item.href}>
               {item.label}
             </a>
           </li>
         ))}
-        <footer className="right-0 bottom-2 left-0 relative place-items-center max-w-[100svw] scale-75">
+        <footer className="right-0 bottom-2 left-0 relative place-items-center">
           <SocialIcons />
         </footer>
       </ul>

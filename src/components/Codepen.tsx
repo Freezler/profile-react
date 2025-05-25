@@ -15,7 +15,7 @@ function GalleryItemComponent({ item, onClick }: { item: GalleryItem, onClick: (
       <img src={item.imageUrl} alt="" loading="lazy" data-index={item.id} />
       <span className="bottom-0 absolute bg-[--badass] px-3 py-1 rounded-tr-2xl text-[--bright-pink] index">{item.id + 1}</span>
       <div className="item__overlay">
-        <button>View →</button>
+        <button className='outline-1 outline-orange-600 text-[--bright-pink]'>View →</button>
       </div>
     </div>
   )
@@ -45,10 +45,10 @@ export function Codepen() {
       })
     }
     // Original logic: random images, random sizes, possible repeats
-    const itemCount = 35
+    const itemCount = 32
     const digits = Array.from({ length: itemCount }, () => [
-      Math.ceil(Math.random() * 4),
-      Math.ceil(Math.random() * 4),
+      Math.ceil(Math.random() * 3),
+      Math.ceil(Math.random() * 3),
     ])
     const items = digits.map(([height, width], index) => ({
       id: index,

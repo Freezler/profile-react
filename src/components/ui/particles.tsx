@@ -45,7 +45,7 @@ export function ParticlesComponent() {
           value: '#0e0e0e',
         },
       },
-      fpsLimit: 200,
+      fpsLimit: 120,
       interactivity: {
         events: {
           onClick: {
