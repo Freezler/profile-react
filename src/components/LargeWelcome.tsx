@@ -3,49 +3,30 @@ import { ParticlesComponent } from './ui/particles'
 
 export function LargeWelcome() {
   return (
-    <div className="bg-black w-[100svw]">
+    <div className="relative mt-0 w-full h-[84vh] overflow-hidden text-white">
 
-      <ParticlesComponent />
+      <div className="flex justify-center items-center place-items-center gap-8 w-full h-[50svh]">
 
-      <div className="h-[100svh] myGrid">
-
-        <div className="">
+        <div className="z-0 absolute flex justify-center justify-items-end items-center w-full h-full translate-y-[21rem]">
           <Image />
         </div>
 
-        <div className="z-[100] bg-[linear-gradient(rgba(31,17,45,0.59),rgba(31,17,45,0.59))] text-[#f1eded]">
-          <div className="glasWrapper">
+        <div className="z-2 my-24 px-4 py-8 text-[#f1eded]">
+          <div className="text-center glasWrapper">
 
-            <h1 className="my-3 text-[clamp(2rem,6vw,4rem)] text-center">
-              hi i'm Randy
-            </h1>
+            <h2 className="bg-clip-text bg-gradient-to-br from-[rgb(65,12,226)] to-[rgba(50,247,241,0.99)] mt-0 font-extrabold text-[clamp(1.2rem,6vw,3rem)] text-transparent leading-tight tracking-tight animate-pulse in oklch">
+              Welcome to My World
+            </h2>
 
-            <p className="mx-auto mb-5 w-[min(100svw,45rem)] font-semibold text-[clamp(1rem,2vw,1.6rem)] text-center text-pretty leading-5 tracking-tight hyphens-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aperiam, labore voluptas id similique modi! Libero dolorum vel ipsum suscipit optio reiciendis..
+            <p className="mx-auto mb-5 w-[clamp(300px,50%,500px)] font-semibold text-[clamp(0.8rem,2vw,1.2rem)] leading-7 tracking-tight hyphens-auto">
+              Dive into the universe of creativity and innovation. Explore the endless possibilities that await you in this journey of discovery.
             </p>
 
           </div>
 
-          <div className="flex justify-center items-center gap-3 [&>button]:bg-violet-400/20 mb-5 [&>button]:px-4 [&>button]:py-3 [&>button]:rounded-[7px] [&>button]:text-[clamp(0.8rem,2vw,1rem)] [&>button]:text-blue-300 text-center btnWrapper">
-
-            <button className="hover:bg-violet-400/60 uppercase transition-all duration-400">
-              Get started
-            </button>
-            <button className="hover:bg-violet-400/60 uppercase transition-all duration-400">
-              Learn more
-            </button>
-
-          </div>
-          <div className="bg-[linear-gradient(rgba(131,17,45,0.9),rgba(31,17,45,0.59))] text-[#f1eded]">
-            <h1 className="my-3 text-[clamp(2rem,6vw,4rem)] text-center">
-              hi i'm Randy
-            </h1>
-          </div>
         </div>
 
       </div>
-
     </div>
-
   )
 }

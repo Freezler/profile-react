@@ -13,7 +13,7 @@ export default function LazyAnimatedSection({ children, amount = 0.2, delay = 0 
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       exit={{ opacity: 0, x: -100, y: -100 }}
       viewport={{ once: true, amount }}
-      transition={{ duration: 0.6, ease: 'easeOut', delay }}
+      transition={{ duration: 0.6, ease: 'easeInOut', delay }}
       style={{ width: '100%' }}
     >
       {children}

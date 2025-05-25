@@ -1,15 +1,15 @@
 // src/components/SpotifyPlaylist.tsx
-export function SpotifyPlaylist() {
+export function Spotify() {
   return (
     <div className="spotify-embed-wrapper">
       <iframe
-        style={{ borderRadius: '12px' }}
-        src="https://open.spotify.com/playlist/2OsQYQx10iduZuzigXCgzt?si=0628170f62ef4745"
+        src="https://open.spotify.com/embed/playlist/2OsQYQx10iduZuzigXCgzt?utm_source=generator"
         width="100%"
-        height="352"
+        height="600"
+        className="spotify-iframe"
+        title="Spotify Playlist"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
-        title="Spotify Playlist"
       />
     </div>
   )

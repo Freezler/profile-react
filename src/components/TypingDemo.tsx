@@ -50,7 +50,7 @@ export default function TypingDemo() {
   }, [charIndex, currentLine])
 
   return (
-    <div className="typing-demo" style={{ fontFamily: 'Inter', fontSize: 'clamp(1.2rem,2.5vw,1.6rem)', width: '100%', height: '100%', maxWidth: '48ch', minWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
+    <div className="typing-demo" style={{ fontFamily: 'Inter', fontSize: 'clamp(1.2rem,2.5vw,1.6rem)', width: '100vw', height: '100%', maxWidth: '48ch', minWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
       {lines.map((_, idx) => (
         <div
           key={idx}
@@ -61,7 +61,7 @@ export default function TypingDemo() {
             minHeight: '1em',
             width: '100%',
             maxWidth: '48ch',
-            minWidth: '32ch',
+            minWidth: '34ch',
             textAlign: 'center',
             position: 'relative',
             margin: '0 auto',
@@ -81,8 +81,8 @@ export default function TypingDemo() {
               className="blinking-cursor"
               style={{
                 display: 'inline-block',
-                width: '0',
-                height: '1em',
+                width: '4px',
+                height: '0.7em',
                 verticalAlign: 'middle',
                 borderRight: showCursor || idx !== lines.length - 1 ? '2px solid var(--bright-pink)' : '0px solid transparent',
                 marginLeft: 0,
@@ -90,7 +90,7 @@ export default function TypingDemo() {
                 background: 'transparent',
                 visibility: (idx === lines.length - 1 && currentLine === lines.length && !showCursor) ? 'hidden' : 'visible',
                 position: 'relative',
-                top: '0',
+                top: '-3px',
               }}
             />
           )}

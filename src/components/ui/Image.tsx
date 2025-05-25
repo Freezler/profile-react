@@ -1,11 +1,10 @@
-import { AspectRatio } from '@radix-ui/react-aspect-ratio'
+import '../../index.css'
 
 export function imageComponent() {
   return (
     <>
-      <AspectRatio ratio={16/9} className="h-full select-none">
-        <img src="/src/assets/banner.png" alt="Image" className="size-[200px] rocket" />
-      </AspectRatio>
+
+      <img src="/src/assets/banner.png" alt="Image" className="size-[300px] rocket" />
 
     </>
   )
