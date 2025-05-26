@@ -627,6 +627,12 @@ ul.socialIcons {
   }
 }
 
+.spotify-embed-wrapper > iframe {
+  border-radius: 12px;
+  border: var(--badass) 4px solid;
+  box-shadow: 2px 2px 38px 14px rgba(215, 8, 163, 0.857);
+}
+
 .socialIcons li a {
   position: relative;
   overflow: hidden;
@@ -924,9 +930,9 @@ ul.socialIcons {
 }
 
 .glasWrapper {
-  background: rgba(195, 23, 123, 0.45);
+  background: rgba(195, 23, 123, 0.173);
   border-radius: 1.2rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(8px);
   box-sizing: border-box;
   padding: 1.5rem 1.5rem;
@@ -980,13 +986,26 @@ ul.socialIcons {
   z-index: 0;
   /* Use a simple CSS radial-gradient for stars, or swap for url('/images/stars.png') if you add a PNG */
   background-image:
-    repeating-radial-gradient(circle at 0% 20%, #37025b 0px, transparent 100px),
-    repeating-radial-gradient(circle at 8% 30%, #4c7396 0px, transparent 150px),
-    repeating-radial-gradient(circle at 5% 70%, #4c7396 20px, transparent 200px),
-    repeating-radial-gradient(circle at 3% 50%, #4c7396 0px, transparent 150px);
+    radial-gradient(circle at 10% 20%, hsla(276, 96%, 18%, 0.104) 10px, transparent 10px),
+    radial-gradient(circle at 8% 30%, hsla(310, 87%, 34%, 0.321) 15px, transparent 15px),
+    radial-gradient(circle at 15% 70%, var(--bright-pink) 20px, transparent 20px),
+    radial-gradient(circle at 60% 50%, var(--badass) 30px, transparent 30px),
+    radial-gradient(circle at 0% 20%, var(--yellow) 10px, transparent 10px),
+    radial-gradient(circle at 8% 30%, var(--pear) 15px, transparent 15px),
+    radial-gradient(circle at 5% 70%, #4c7396 20px, transparent 20px),
+    radial-gradient(circle at 60% 50%, #4c7396 30px, transparent 30px),
+    radial-gradient(circle at 10% 20%, hsla(276, 96%, 18%, 0.104) 10px, transparent 10px),
+    radial-gradient(circle at 8% 30%, hsla(310, 87%, 34%, 0.321) 15px, transparent 15px),
+    radial-gradient(circle at 15% 70%, var(--bright-pink) 20px, transparent 20px),
+    radial-gradient(circle at 60% 50%, var(--badass) 30px, transparent 30px),
+    radial-gradient(circle at 0% 20%, var(--yellow) 10px, transparent 10px),
+    radial-gradient(circle at 8% 30%, var(--pear) 15px, transparent 15px),
+    radial-gradient(circle at 5% 70%, #4c7396 20px, transparent 20px),
+    radial-gradient(circle at 60% 50%, #4c7396 30px, transparent 30px);
   opacity: 0.5;
   animation: stars-move 102s linear infinite;
   pointer-events: none;
+  filter: blur(16px);
 }
 
 @keyframes stars-move {
@@ -998,9 +1017,12 @@ ul.socialIcons {
   }
   100% {
     background-position:
-      0 400px,
-      0 600px,
-      0 800px;
+      100px 200px,
+      350px 400px,
+      500px 600px,
+      700px 850px,
+      850px 1000px,
+      1500px 1600px;
   }
 }
 
@@ -1056,7 +1078,7 @@ ul.socialIcons {
   position: relative;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 2px 12px 0 rgba(239, 71, 111, 0.12);
+  box-shadow: 0 2px 12px 0 rgba(239, 71, 110, 0.362);
   box-sizing: border-box;
 }
 
