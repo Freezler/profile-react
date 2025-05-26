@@ -89,7 +89,7 @@ export function ParticlesComponent() {
         },
         links: {
           color: 'hsla(165, 100%, 50%, 0.9)',
-          distance: 200,
+          distance: 100,
           enable: true,
           opacity: 1,
           width: 1.5,
@@ -110,7 +110,7 @@ export function ParticlesComponent() {
           density: {
             enable: false,
           },
-          value: 100,
+          value: 80,
         },
         opacity: {
           value: 0.1,
