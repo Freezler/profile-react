@@ -42,7 +42,7 @@ export function ParticlesComponent() {
       },
       background: {
         color: {
-          value: '#0e0e0e',
+          value: 'hsl(0, 0%, 4%)',
         },
       },
       fpsLimit: 120,
@@ -84,8 +84,8 @@ export function ParticlesComponent() {
       },
       particles: {
         color: {
-          value: 'hsla(0, 100%, 10%, 0.9)',
-          width: 4,
+          value: 'hsla(110, 100%, 10%, 0.9)',
+          width: 12,
         },
         links: {
           color: 'hsla(165, 100%, 50%, 0.9)',
