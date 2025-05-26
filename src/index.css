@@ -1053,3 +1053,11 @@ img {
     animation: none;
   }
 }
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-gap: 8px;
+    padding: 0 4px;
+  }
+}

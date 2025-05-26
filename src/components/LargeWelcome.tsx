@@ -4,7 +4,7 @@ export function LargeWelcome() {
   return (
     <div className="relative mb-12 w-full h-[84vh] overflow-hidden text-white">
 
-      <div className="flex md:flex-row flex-col justify-center items-center place-items-center gap-0 w-full h-[100svh]">
+      <div className="flex md:flex-row flex-col justify-center items-center place-items-center gap-0 max-w-[100svw] h-[100svh]">
 
         <div className="z-0 flex justify-center items-center mb-8">
           <Image />
