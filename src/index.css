@@ -963,15 +963,51 @@ ul.socialIcons {
 }
 
 .welcome-section {
-  display: flex;
+  display: inline-block;
+  width: 100%;
+  max-height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Use a simple CSS radial-gradient for stars, or swap for url('/images/stars.png') if you add a PNG */
+  background-image:
+    repeating-radial-gradient(circle at 0% 20%, #37025b 0px, transparent 100px),
+    repeating-radial-gradient(circle at 8% 30%, #4c7396 0px, transparent 150px),
+    repeating-radial-gradient(circle at 5% 70%, #4c7396 20px, transparent 200px),
+    repeating-radial-gradient(circle at 3% 50%, #4c7396 0px, transparent 150px);
+  opacity: 0.5;
+  animation: stars-move 102s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes stars-move {
+  0% {
+    background-position:
+      0 0,
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      0 400px,
+      0 600px,
+      0 800px;
+  }
 }
 
 .rocket {
   position: relative;
-  animation: rocketLaunch 16s ease-in-out infinite;
+  z-index: 1;
+  animation: rocketLaunch 6s ease-in-out infinite;
 }
 
 @keyframes rocketLaunch {
@@ -1019,8 +1055,8 @@ ul.socialIcons {
   border-radius: 16px;
   position: relative;
   margin: 0 auto;
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 2px 12px 0 rgba(239,71,111,0.12);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 12px 0 rgba(239, 71, 111, 0.12);
   box-sizing: border-box;
 }
 
@@ -1035,12 +1071,21 @@ ul.socialIcons {
   top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  animation: scroll-indicator-move 1.2s infinite cubic-bezier(0.4,0,0.2,1);
+  animation: scroll-indicator-move 1.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 }
 
 @keyframes scroll-indicator-move {
-  0% { opacity: 1; top: 8px; }
-  60% { opacity: 1; top: 20px; }
-  100% { opacity: 0; top: 28px; }
+  0% {
+    opacity: 1;
+    top: 8px;
+  }
+  60% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
+    opacity: 0;
+    top: 28px;
+  }
 }
