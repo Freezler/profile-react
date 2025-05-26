@@ -520,7 +520,7 @@ ul.socialIcons {
 
 #mobileMenu {
   position: fixed;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(24px);
   background: linear-gradient(var(--background2));
   height: 100vh;
   width: 100vw;
@@ -537,14 +537,13 @@ ul.socialIcons {
 #mobileMenu[data-open='true'] {
   opacity: 1;
   transform: translateX(0);
-  backdrop-filter: blur(66px);
 }
 
 #mobileMenu[data-open='false'] {
   opacity: 0;
   transform: translateX(100%);
   pointer-events: none;
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(4px);
 }
 
 #mobileMenu a {
@@ -569,7 +568,7 @@ ul.socialIcons {
 
 /* Improve focus visibility for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--bright-pink);
+  outline: 1px solid var(--bright-pink);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -645,7 +644,7 @@ ul.socialIcons {
   margin: 10px 0px;
   border-radius: 50%;
   margin-bottom: 1rem;
-  border: 4px ridge var(--pear);
+  border: 2px inset var(--pear);
   z-index: 1;
   transition: all 0.5s ease-in-out;
 }
@@ -677,7 +676,7 @@ ul.socialIcons {
 
 .socialIcons li a:hover .icon {
   color: #fff;
-  transform: rotate3d(1, 1, 1, 360deg);
+  transform: rotate3d(2, 2, 2, 360deg);
 }
 
 .socialIcons li:nth-child(1) a:before {

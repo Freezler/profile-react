@@ -11,7 +11,6 @@ import {
 
 import { Sling as Hamburger } from 'hamburger-react'
 import { useEffect, useState } from 'react'
-import { SocialIcons } from './Social'
 
 const navigationItems = [
   { label: 'home', href: '/' },
@@ -53,14 +52,14 @@ function Header() {
                 {item.children
                   ? (
                       <>
-                        <NavigationMenuTrigger className={navigationMenuTriggerStyle() + ' text-[2.5rem] px-6 py-2'}>
+                        <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} text-[2.5rem] px-6 py-2`}>
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="shadow-lg mt-14 rounded-md w-[30px]">
                           {item.children.map(child => (
                             <NavigationMenuLink
                               key={child.label}
-                              className={navigationMenuTriggerStyle() + ' text-[2rem] px-6 py-2'}
+                              className={`${navigationMenuTriggerStyle()} text-[2rem] px-6 py-2`}
                               href={child.href}
                             >
                               {child.label}
@@ -71,7 +70,7 @@ function Header() {
                     )
                   : (
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle() + ' text-[2.5rem] px-6 py-2'}
+                        className={`${navigationMenuTriggerStyle()} text-[2.5rem] px-6 py-2`}
                         href={item.href}
                       >
                         {item.label}
@@ -107,8 +106,14 @@ function Header() {
             </a>
           </li>
         ))}
-        <footer className="right-0 bottom-2 left-0 relative place-items-center">
-          <SocialIcons />
+        <footer className="right-0 bottom-0 left-0 relative place-items-center">
+          <p className="text-[clamp(0.8rem,2vw,1.2rem)] text-center">
+            ©
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            Randy de Vries. All rights reserved.
+          </p>
         </footer>
       </ul>
     </nav>
