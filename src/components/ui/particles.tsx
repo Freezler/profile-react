@@ -84,11 +84,12 @@ export function ParticlesComponent() {
       },
       particles: {
         color: {
-          value: 'hsla(0, 100%, 100%, 0.9)',
+          value: 'hsla(0, 100%, 10%, 0.9)',
+          width: 4,
         },
         links: {
           color: 'hsla(165, 100%, 50%, 0.9)',
-          distance: 100,
+          distance: 200,
           enable: true,
           opacity: 1,
           width: 1.5,
@@ -101,7 +102,7 @@ export function ParticlesComponent() {
             default: OutMode.bounce,
           },
           random: true,
-          speed: 2,
+          speed: 1.4,
           straight: false,
           smooth: true,
         },
@@ -112,7 +113,7 @@ export function ParticlesComponent() {
           value: 100,
         },
         opacity: {
-          value: 0.4,
+          value: 0.1,
         },
         shape: {
           type: 'square',
@@ -122,6 +123,20 @@ export function ParticlesComponent() {
         },
       },
       detectRetina: true,
+      emitters: {
+        position: {
+          x: 50,
+          y: 50,
+        },
+        rate: {
+          delay: 0.9,
+          quantity: 10,
+        },
+        size: {
+          width: 100,
+          height: 100,
+        },
+      },
     }),
     [],
   )

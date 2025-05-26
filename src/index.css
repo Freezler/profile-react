@@ -460,12 +460,15 @@ img {
 }
 
 #border-gradient {
-  --c: #171717;
-  --p: 10%;
-  background:
-    linear-gradient(var(--c), var(--c)) padding-box,
-    conic-gradient(from var(--gradient-angle), transparent, white var(--p), transparent calc(var(--p) * 2)) border-box;
-  border: 1px solid transparent;
+  position: relative;
+  z-index: 1;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  padding: 12px; /* Thicker border for visibility */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
 }
 
 #mobileMenu {
@@ -785,7 +788,7 @@ img {
 }
 
 .app-main {
-  gap: 1rem;
+  gap: 0.4rem;
   display: grid;
   min-height: 100%;
 }
@@ -882,15 +885,59 @@ img {
 }
 
 .glasWrapper {
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: rgba(195, 23, 123, 0.45);
+  border-radius: 1.2rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 2rem 1.5rem;
-  margin-top: 0;
-  margin-bottom: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  box-shadow: 0 4px 32px 0 rgba(50, 50, 100, 0.12);
+  width: clamp(42ch, 90vw, 72ch);
+  text-wrap: pretty;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Container Queries for .glasWrapper */
+@container (max-width: 600px) {
+  .glasWrapper {
+    display: flex;
+    gap: 3rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+  }
+  .glasWrapper h1 {
+    font-size: clamp(1.5rem, 8vw, 2.4rem);
+    line-height: 24px;
+  }
+  .glasWrapper p {
+    font-size: 1rem;
+  }
+}
+
+@container (min-width: 601px) and (max-width: 900px) {
+  .glasWrapper h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+  }
+  .glasWrapper p {
+    font-size: 1.2rem;
+  }
+}
+
+@container (min-width: 901px) {
+  .glasWrapper {
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+  .glasWrapper h1 {
+    font-size: clamp(2.4rem, 6vw, 6rem);
+  }
+  .glasWrapper p {
+    font-size: 1.6rem;
+  }
 }
 
 .glasWrapper h1 {
@@ -904,9 +951,9 @@ img {
   font-size: clamp(2.4rem, 6vw, 6rem);
   text-transform: uppercase;
   letter-spacing: -0.04em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   text-align: center;
-  display: inline-block;
+  display: flex;
 }
 
 .glasWrapper p {
@@ -914,7 +961,6 @@ img {
   font-family: 'Inter', sans-serif;
   font-size: clamp(1rem, 2vw, 1.6rem);
   text-align: center;
-  margin-bottom: 1.5rem;
 }
 
 .welcome-section {
