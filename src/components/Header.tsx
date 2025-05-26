@@ -41,11 +41,11 @@ function Header() {
   }, [isOpen])
 
   return (
-    <nav className="top-0 right-0 left-0 z-[400] fixed flex justify-between items-start backdrop-blur-sm mb-4 p-6 py-[8px] max-w-[100svw] antialiased select-none">
-      <div className="flex justify-start space-x-4 mr-auto text-zinc-100 [&>a]:text-[2rem]">
+    <nav className="top-0 right-2 left-2 z-[400] fixed flex justify-between items-start backdrop-blur-sm mb-4 p-5 max-w-[100svw] antialiased select-none">
+      <div className="flex justify-start mr-auto text-zinc-100 [&>a]:text-[2rem]">
         <a href="/" aria-label="Home">RLDV</a>
       </div>
-      <div className="hidden md:flex font-4xl font-xl text-zinc-100 [&>a]:text-lg align-center">
+      <div className="hidden md:flex text-zinc-100 [&>a]:text-[2.5rem] align-center">
         <NavigationMenu>
           <NavigationMenuList>
             {navigationItems.map(item => (
@@ -53,14 +53,14 @@ function Header() {
                 {item.children
                   ? (
                       <>
-                        <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuTrigger className={navigationMenuTriggerStyle() + ' text-[2.5rem] px-6 py-2'}>
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="shadow-lg mt-14 rounded-md w-[30px]">
                           {item.children.map(child => (
                             <NavigationMenuLink
                               key={child.label}
-                              className={navigationMenuTriggerStyle()}
+                              className={navigationMenuTriggerStyle() + ' text-[2rem] px-6 py-2'}
                               href={child.href}
                             >
                               {child.label}
@@ -71,7 +71,7 @@ function Header() {
                     )
                   : (
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className={navigationMenuTriggerStyle() + ' text-[2.5rem] px-6 py-2'}
                         href={item.href}
                       >
                         {item.label}
