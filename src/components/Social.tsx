@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export function SocialIcons() {
   const socialLinks = [
     { icon: faCodepen, href: 'https://codepen.io/freezler', label: 'Visit my Codepen profile' },
-    { icon: faXTwitter, href: 'https://x.com/randy64757', label: 'Follow me on X (Twitter)' },
+    { icon: faXTwitter, href: '', label: 'Follow me on X (Twitter)' },
     { icon: faLinkedinIn, href: 'https://nl.linkedin.com/in/randy-de-vries-858291278', label: 'Connect with me on LinkedIn' },
     { icon: faGithub, href: 'https://github.com/Freezler', label: 'Check out my GitHub projects' },
   ]
